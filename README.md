@@ -23,3 +23,10 @@ React, Vite, Python, PyTorch
 3. **Start the Development Server**
    ```bash
    npm run dev
+
+## Screenshots
+### Starting Page
+<img width="500" alt="image" src="https://github.com/user-attachments/assets/41c3cbc0-318c-49b7-b624-8b0e5a1ddb09" />
+
+### Guessing Page
+<img width="500" alt="image" src="https://github.com/user-attachments/assets/1e9b94f5-c77f-4de9-9c8c-e32591bd9d81" />
