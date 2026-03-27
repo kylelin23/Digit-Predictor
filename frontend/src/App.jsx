@@ -8,7 +8,7 @@ function App() {
   const isDrawingRef = useRef(false);
 
   const [result, setResult] = useState(null);
-  const [status, setStatus] = useState("Draw a digit, then click Predict.");
+  const [status, setStatus] = useState("");
 
   // Set up canvas
   useEffect(() => {
@@ -194,37 +194,46 @@ function App() {
 
   return (
     <div className = "container">
-      <h1>Digit Predictor</h1>
-      <div>
-        <canvas
-          ref={canvasRef}
-          width={300}
-          height={300}
-          onMouseDown={startDrawing}
-          onMouseMove={draw}
-          onMouseUp={stopDrawing}
-          onMouseLeave={stopDrawing}
-          className = "canvas"
-        />
-      </div>
-
-      <div>
-        <button onClick={predictDigit}>Predict</button>
-        <button onClick={clearCanvas}>Clear</button>
-      </div>
-
-      <p>{status}</p>
-
-      {result && (
-        <div>
-          <div>
-            <strong>Prediction:</strong> {result.prediction}
+      <h1 style = {{fontSize: 40}}>Digit Guesser</h1>
+      <h5 style = {{fontSize: 17}} className = "instructions">Draw a digit (0-9) on the canvas below and I'll try to guess it! </h5>
+      <div className = "canvasContainer">
+        <div style = {{display: 'flex', flexDirection: 'column'}}>
+          <h3 style = {{textAlign: 'center', fontSize: 25}}>Draw Here</h3>
+          <canvas
+            ref={canvasRef}
+            width={300}
+            height={300}
+            onMouseDown={startDrawing}
+            onMouseMove={draw}
+            onMouseUp={stopDrawing}
+            onMouseLeave={stopDrawing}
+            className = "canvas"
+          />
+          <div style = {{display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 15}}>
+            <button className = "button" onClick={predictDigit}>Predict</button>
+            <button className = "button" onClick={clearCanvas}>Clear</button>
           </div>
-          <div>
-            <strong>Confidence:</strong> {(result.confidence * 100).toFixed(0)}%
-          </div>
+
         </div>
-      )}
+
+        <div>
+          <h3 style = {{textAlign: 'center', fontSize: 25}}>Prediction</h3>
+          {!result && (
+            <div className = "gray-box">
+              {status}
+            </div>
+          )}
+
+          {result && status != "Please draw something first." && (
+            <div className = "prediction-box">
+              <div style = {{color: 'white', fontSize: 20}}>My Guess:</div>
+              <div style = {{color: 'white', fontSize: 90, fontFamily: 'San Francisco'}}><strong>{result.prediction}</strong></div>
+              <div style = {{color: 'white', fontSize: 20}}>Confidence: {(result.confidence * 100).toFixed(0)}%</div>
+            </div>
+          )}
+        </div>
+      </div>
+
     </div>
   );
 }
