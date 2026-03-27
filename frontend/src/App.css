@@ -46,6 +46,19 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    margin-bottom: 15px;
+}
+
+.wrong-box {
+    background-color:red;
+    border-radius: 15px;
+    height: 320px;
+    width: 320px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 15px;
 }
 
 .button {
