@@ -9,20 +9,30 @@ React, Vite, Python, PyTorch
 ## How to Start
 ### Prerequisites
 - Node.js
+- Python
 
 ### Steps
 1. **Clone the Repository**  
    ```bash
    git clone <your-repo-url>
-   cd Digit-Predictor
+   cd Digit-Guesser
 
 2. **Install Dependencies**
    ```bash
    npm install
+   pip install torch torchvision
+   pip install uvicorn
+   pip install fastapi
 
 3. **Start the Development Server**
    ```bash
+   cd frontend
    npm run dev
+   
+4. **Start the Backend**
+   ```bash
+   cd backend
+   uvicorn server:app --reload
 
 ## Screenshots
 ### Starting Page
