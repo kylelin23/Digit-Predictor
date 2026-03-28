@@ -24,8 +24,8 @@ I built a full-stack web application that can accurately guess in real time what
 
 2. **Install Dependencies**
    ```bash
-   npm install
-   pip install torch torchvision uvicorn fastapi
+   npm install # in frontend folder
+   pip install torch torchvision uvicorn fastapi # in backend folder
    ```
 
 3. **Start the Development Server**
