@@ -230,9 +230,6 @@ function App() {
                   >
                     <strong>{result.prediction}</strong>
                   </div>
-                  <div style={{ color: "white", fontSize: 20 }}>
-                    Gemini prediction
-                  </div>
                 </div>
               )}
 
