@@ -1,10 +1,15 @@
 # AI Digit Guesser
 
 ## Project Description:
-I built a webpage that can accurately guess in real time what digit the user draws on a canvas using a Pytorch model trained on MNIST. 
+I built a full-stack web application that can accurately guess in real time what digit the user draws on a canvas. I used two different methods: 
+1. Writing a Pytorch model trained on MNIST
+2. Sending the image to Gemini API
 
 **Technologies Used:**
-React, Vite, Python, PyTorch
+-   **Frontend:** React, Vite
+-   **Backend:** Node.js, Express.js, FastAPI
+-   **Machine Learning:** Python, PyTorch
+-   **AI API:** Google Gemini API
 
 ## How to Start
 ### Prerequisites
@@ -20,19 +25,37 @@ React, Vite, Python, PyTorch
 2. **Install Dependencies**
    ```bash
    npm install
-   pip install torch torchvision
-   pip install uvicorn
-   pip install fastapi
+   pip install torch torchvision uvicorn fastapi
+   ```
 
 3. **Start the Development Server**
+
+   To use the model I wrote:
    ```bash
-   cd frontend
+   cd frontend/self-made-model-frontend
    npm run dev
-   
-4. **Start the Backend**
+   ```
+    
+   To use the Gemini API: 
    ```bash
-   cd backend
+   cd frontend/gemini-made-model-frontend
+   npm run dev
+   ```
+   
+5. **Start the Backend**
+
+   To use the model I wrote:
+   ```bash
+   cd backend/self-made-model
    uvicorn server:app --reload
+   ```
+    
+   To use the Gemini API: 
+   ```bash
+   cd backend/gemini-made-model
+   node server.js
+   ```
+
 
 ## Screenshots
 ### Starting Page
