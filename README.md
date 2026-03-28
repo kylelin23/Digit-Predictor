@@ -16,6 +16,17 @@ I built a full-stack web application that can accurately guess in real time what
 - Node.js
 - Python
 
+### Environment Setup (Required for Gemini API)
+
+If you want to use the Gemini API version of this project, you must create your own API key.
+
+1. Go to Google AI Studio and generate an API key.
+
+2. Inside .env in backend/gemini-made-model:
+```env
+GEMINI_API_KEY=your_api_key_here
+```
+
 ### Steps
 1. **Clone the Repository**  
    ```bash
